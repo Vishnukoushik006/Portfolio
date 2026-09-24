@@ -1,0 +1,121 @@
+/* ════════════════════════════════════════════════════════════════════
+   Apple-Inspired 3D Tilt Image Component
+   ════════════════════════════════════════════════════════════════════ */
+
+.tilt-3d-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 18px;
+
+  /* Base styling */
+  background: linear-gradient(145deg, #ffffff, #f3f3f3);
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 96px;
+
+  /* 3D Setup */
+  transform-style: preserve-3d;
+  transform-origin: center;
+  perspective: 1200px;
+
+  /* GPU Acceleration */
+  will-change: transform;
+
+  /* Base shadow - enhanced with dynamic positioning */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+  /* Cursor feedback */
+  cursor: pointer;
+  user-select: none;
+
+  /* Interaction feedback - NO transform transition */
+  /* Only shadow and filter transition */
+  transition: box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+              filter 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+
+  /* CSS variables for dynamic shadow positioning */
+  --shadow-x: 0px;
+  --shadow-y: 0px;
+
+  /* Subtle idle floating animation */
+  animation: floatIdle 6s ease-in-out infinite;
+}
+
+/* ── Hover State ────────────────────────────────────────────────── */
+.tilt-3d-image-container:hover {
+  /* Enhanced shadow on hover - moves with tilt */
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.2),
+    var(--shadow-x) var(--shadow-y) 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Image Element ──────────────────────────────────────────────── */
+.tilt-3d-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  z-index: 1;
+
+  /* 3D Transform Setup */
+  transform-style: preserve-3d;
+  will-change: transform;
+
+  /* Performance */
+  -webkit-user-drag: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Fallback Emoji ────────────────────────────────────────────── */
+.tilt-3d-fallback {
+  position: relative;
+  z-index: 0;
+  font-size: 96px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Subtle Floating Animation (Idle State) ────────────────────── */
+@keyframes floatIdle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* ── Responsive Design ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .tilt-3d-image-container {
+    border-radius: 14px;
+  }
+
+  .tilt-3d-image {
+    border-radius: 14px;
+  }
+
+  /* Reduce rotation on mobile devices */
+  /* (Handled via JavaScript by reducing max angle) */
+}
+
+/* ── Performance Optimizations ────────────────────────────────── */
+/* Contain paint and layout for this element */
+.tilt-3d-image-container {
+  contain: layout style paint;
+}
+
+/* Prevent subpixel rendering issues */
+.tilt-3d-image-container * {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
