@@ -28,6 +28,25 @@
   --text-primary: #111111;
   --text-secondary: #4B5563;
   --text-muted: #6B7280;
+
+  /* Nav */
+  --nav-bg: rgba(248, 245, 239, 0.85);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f0f0f;
+  --bg-secondary: #161616;
+  --bg-card: #1c1c1c;
+  --bg-card-hover: #242424;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(255, 255, 255, 0.18);
+  --accent: #c4845a;
+  --accent-soft: #d4956a;
+  --accent-dim: rgba(196, 132, 90, 0.12);
+  --text-primary: #f0ece4;
+  --text-secondary: #a0a0a0;
+  --text-muted: #6b6b6b;
+  --nav-bg: rgba(15, 15, 15, 0.85);
 }
 
 html {
@@ -151,12 +170,11 @@ em.accent {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(248, 245, 239, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
+  transition: background 0.4s;
 }
 
 .nav-logo {
@@ -684,4 +702,54 @@ html.lenis body {
 .contact-right,
 .about-photo-frame {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ── DARK MODE TOGGLE ────────────── */
+.dark-toggle {
+  background: none;
+  border: 1px solid var(--border-hover);
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.dark-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* ── DARK MODE RIPPLE ────────────── */
+.dark-ripple {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: #0f0f0f;
+  z-index: 9999;
+  pointer-events: none;
+  transform: translate(50%, -50%);
+}
+
+.dark-ripple.ripple-animate {
+  animation: ripple-expand 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes ripple-expand {
+  0%   { width: 0; height: 0; opacity: 1; }
+  100% { width: 300vmax; height: 300vmax; opacity: 0; }
+}
+
+/* ── DARK MODE TRANSITIONS ───────── */
+body,
+.nav,
+.project-card,
+.contact-right,
+.skill-pill,
+.contact-link,
+.about-photo-caption {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }

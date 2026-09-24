@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './index.css';
 import Lenis from 'lenis'
 import Background from './components/Background'
@@ -14,6 +14,14 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
+  const [dark, setDark] = useState(false)
+
+  function toggleDark() {
+    const next = !dark
+    setDark(next)
+    document.documentElement.setAttribute('data-theme', next ? 'dark' : '')
+  }
+
   useEffect(() => {
     // Fast & Snappy Lenis Smooth Scroll
     const lenis = new Lenis({
@@ -60,7 +68,7 @@ function App() {
       <ScrollProgressBar />
       <Background />
       <CustomCursor />
-      <Nav />
+      <Nav dark={dark} onToggle={toggleDark} />
       <main>
         <Hero />
         <About />
