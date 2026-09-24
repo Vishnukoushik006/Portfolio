@@ -9,8 +9,8 @@
   border-radius: 18px;
 
   /* Base styling */
-  background: linear-gradient(145deg, #ffffff, #f3f3f3);
-  border: 2px solid #000;
+  background: var(--bg-card);
+  border: 2px solid var(--border-hover);
   display: flex;
   align-items: center;
   justify-content: center;

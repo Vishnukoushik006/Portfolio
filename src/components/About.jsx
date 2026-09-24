@@ -14,7 +14,7 @@ export default function About() {
           {/* Photo - Premium 3D Tilt Effect */}
           <div className="about-photo reveal">
             <Tilt3DImage 
-              src="/profile.jpg" 
+              src="/Portfolio/profile.jpg" 
               alt="Vishnu Koushik"
               className="profile-tilt"
             />

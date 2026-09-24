@@ -10,8 +10,8 @@ export default function Hero() {
         </div>
 
         <h1 className="hero-title">
-          I build things for the web —{' '}
-          <em>carefully</em>.
+          Welcome to my corner of the{' '}
+          <em>Internet !</em>.
         </h1>
 
         <p className="hero-desc">
