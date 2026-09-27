@@ -11,7 +11,7 @@ export default function Hero() {
 
         <h1 className="hero-title">
           Welcome to my corner of the{' '}
-          <em>Internet !</em>.
+          <em>Internet !</em>
         </h1>
 
         <p className="hero-desc">

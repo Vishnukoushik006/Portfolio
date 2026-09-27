@@ -10,8 +10,8 @@
 
 :root {
   /* Backgrounds */
-  --bg-primary: #F8F5EF;
-  --bg-secondary: #F2EEE6;
+  --bg-primary: #FFF8E7;
+  --bg-secondary: #F5EFE0;
   --bg-card: #FFFFFF;
   --bg-card-hover: #F8F8F8;
 
@@ -30,7 +30,7 @@
   --text-muted: #6B7280;
 
   /* Nav */
-  --nav-bg: rgba(248, 245, 239, 0.85);
+  --nav-bg: rgba(255, 248, 231, 0.85);
 }
 
 [data-theme="dark"] {

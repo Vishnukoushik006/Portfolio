@@ -1,6 +1,6 @@
 const projects = [
   {
-    emoji: '',
+    emoji: '💼',
     bg: 'linear-gradient(135deg, #131225, #1a1830)',
     tags: [
       { label: 'React.js', color: '#000000', bg: 'rgba(0,0,0,0.08)' },
@@ -8,7 +8,7 @@ const projects = [
     ],
     title: 'RoleFlow',
     desc: 'An application for tracking jobs that are applying in carrer pages and job portals so you can track your jobs easily',
-    link: '#',
+    link: 'https://github.com/Vishnukoushik006/RoleFlow',
   },
   {
     emoji: '📊',
@@ -18,8 +18,8 @@ const projects = [
       { label: 'MongoDB', color: '#d4a55b', bg: 'rgba(212,165,91,0.12)' },
     ],
     title: 'CashCompass',
-    desc: 'A dashboard for tracking daily expenses',
-    link: '#',
+    desc: 'A dashboard for tracking daily expenses and  Enhanced dashboard loading metrics by 15% by developing responsive data visualizations via Chart.js.',
+    link: 'https://github.com/Vishnukoushik006/Expense-Tracker',
   },
   {
     emoji: '🤖',
@@ -30,7 +30,7 @@ const projects = [
     ],
     title: 'Chat Engine',
     desc: 'A lightweight RAG-based chat backend I open-sourced last year. Got more stars than I expected. Still maintaining it in my free time.',
-    link: '#',
+    link: 'https://github.com/Vishnukoushik006/gate-rag-system',
   },
 ]
 
