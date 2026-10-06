@@ -23,6 +23,13 @@ export default function Hero() {
         <div className="hero-actions">
           <a href="#projects" className="btn-primary">See my work →</a>
           <a href="#contact" className="btn-outline">Get in touch</a>
+          <a
+            href="/Portfolio/VishnuKoushik-Resume.pdf"
+            download="VishnuKoushik-Resume.pdf"
+            className="btn-outline"
+          >
+            ⬇ Résumé
+          </a>
         </div>
       </div>
     </section>

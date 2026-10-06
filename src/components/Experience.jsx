@@ -16,8 +16,7 @@ export default function Experience() {
           <p className="label">Experience</p>
           <h2 className="heading">Where I've worked</h2>
           <p className="subheading">
-            Three roles so far, each pretty different. I've picked up something
-            useful from each of them.
+            I've worked on a few projects and roles that helped me grow as a developer and collaborator.
           </p>
         </div>
 
@@ -29,7 +28,7 @@ export default function Experience() {
               </div>
               <div className="timeline-right">
                 <div className="timeline-role">{item.role}</div>
-                <div className="timeline-company">{item.company}</div>
+                <div className="timeline-company">{item.Organisation}</div>
                 <p className="timeline-desc">{item.desc}</p>
               </div>
             </div>

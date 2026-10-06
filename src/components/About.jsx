@@ -56,7 +56,13 @@ export default function About() {
             </div>
 
             <div style={{ marginTop: '28px' }}>
-              <a href="#contact" className="btn-primary">Download résumé →</a>
+              <a
+                href="/Portfolio/VishnuKoushik-Resume.pdf"
+                download="VishnuKoushik-Resume.pdf"
+                className="btn-primary"
+              >
+                ⬇ Download résumé
+              </a>
             </div>
           </div>
 
